@@ -17,8 +17,8 @@ public class ClientHandler {
     @Autowired
     private MenuFeign menuFeign;
 
-    @GetMapping("/client/{index}/{limit}")
-    public List<Menu> findAll(@PathVariable("index") int index,@PathVariable("/limit") int limit){
+    @GetMapping("/findAll/{index}/{limit}")
+    public List<Menu> findAll(@PathVariable("index") int index,  @PathVariable int limit){
         return menuFeign.findAll(index,limit);
-    };
+    }
 }
